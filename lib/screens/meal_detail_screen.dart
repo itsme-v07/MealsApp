@@ -37,7 +37,7 @@ class MealDetailScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('${selectedMeal.title}'),
+        title: Text('${selectedMeal.title}'), //manggil title
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -55,6 +55,7 @@ class MealDetailScreen extends StatelessWidget {
               ListView.builder(
                 itemBuilder: (context, index) => Card(
                   color: Theme.of(context).colorScheme.secondary,
+                  // color: Color(0xFF17203A),
                   child: Padding(
                     padding: EdgeInsets.symmetric(
                       vertical: 5,
@@ -62,6 +63,10 @@ class MealDetailScreen extends StatelessWidget {
                     ),
                     child: Text(
                       selectedMeal.ingredients[index],
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
@@ -76,7 +81,10 @@ class MealDetailScreen extends StatelessWidget {
                     ListTile(
                       leading: CircleAvatar(
                         backgroundColor: Theme.of(context).colorScheme.primary,
-                        child: Text('# ${(index + 1)}'),
+                        child: Text(
+                          '# ${(index + 1)}',
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                       title: Text(
                         selectedMeal.steps[index],
@@ -87,7 +95,7 @@ class MealDetailScreen extends StatelessWidget {
                 ),
                 itemCount: selectedMeal.steps.length,
               ),
-            )
+            ),
           ],
         ),
       ),
