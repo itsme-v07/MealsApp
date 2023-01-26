@@ -83,11 +83,17 @@ class MealDetailScreen extends StatelessWidget {
                         backgroundColor: Theme.of(context).colorScheme.primary,
                         child: Text(
                           '# ${(index + 1)}',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                       title: Text(
                         selectedMeal.steps[index],
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     Divider()
